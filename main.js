@@ -37,7 +37,7 @@
 // }
 
 
-function {
+function iniciarCompra() {
     let precio;
     let aceite;
     for (;;) {

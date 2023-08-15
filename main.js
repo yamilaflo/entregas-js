@@ -85,77 +85,77 @@
 
 
 
-const productos = [
-    { name: "Oliva", precio: 1500 },
-    { name: "Girasol", precio: 900 },
-    { name: "Harina", precio: 850 },
-    { name: "Tomate", precio: 900 },
-  ];
+// const productos = [
+//     { name: "Oliva", precio: 1500 },
+//     { name: "Girasol", precio: 900 },
+//     { name: "Harina", precio: 850 },
+//     { name: "Tomate", precio: 900 },
+//   ];
   
-  const carrito = [];
+//   const carrito = [];
   
-  const filtrarProd = (arr, saldo) => {
-    const productosAdquiridos = arr.filter((e) => e.precio <= saldo);
+//   const filtrarProd = (arr, saldo) => {
+//     const productosAdquiridos = arr.filter((e) => e.precio <= saldo);
   
-    const disponible = [];
+//     const disponible = [];
   
-    productosAdquiridos.forEach((e) => {
-      disponible.push(` ${e.name}`);
-    });
+//     productosAdquiridos.forEach((e) => {
+//       disponible.push(` ${e.name}`);
+//     });
   
-    const pedido = prompt(
-      `Tenes para elegir:${disponible}. Ingresar el nombre exacto.`
-    );
+//     const pedido = prompt(
+//       `Tenes para elegir:${disponible}. Ingresar el nombre exacto.`
+//     );
   
-    guardar(productos, pedido);
-  };
+//     guardar(productos, pedido);
+//   };
   
-  const comprar = () => {
-    let resultado;
-    do {
-      resultado = prompt(
-        "Ingrese su monto disponible para gastar, ingrese F para salir del bucle"
-      );
+//   const comprar = () => {
+//     let resultado;
+//     do {
+//       resultado = prompt(
+//         "Ingrese su monto disponible para gastar, ingrese F para salir del bucle"
+//       );
   
-      resultado = resultado === "F" ? "F" : Number(resultado);
-    } while (isNaN(resultado) && resultado !== "F");
+//       resultado = resultado === "F" ? "F" : Number(resultado);
+//     } while (isNaN(resultado) && resultado !== "F");
   
-    let saldo = resultado;
+//     let saldo = resultado;
   
-    if (saldo === "F") {
-      alert("Nos vemos");
-    } else if (saldo >= 850) {
-      filtrarProd(productos, saldo);
-    } else {
-      alert("Saldo insuficiente para realizar una compra");
-    }
-  };
+//     if (saldo === "F") {
+//       alert("Nos vemos");
+//     } else if (saldo >= 850) {
+//       filtrarProd(productos, saldo);
+//     } else {
+//       alert("Saldo insuficiente para realizar una compra");
+//     }
+//   };
   
-  const preguntar = (respuesta) => {
-    if (respuesta === true) {
-      comprar();
-    } else {
-      alert("Gracias por su compra, su pedido se cargo al carrito");
-    }
-  };
+//   const preguntar = (respuesta) => {
+//     if (respuesta === true) {
+//       comprar();
+//     } else {
+//       alert("Gracias por su compra, su pedido se cargo al carrito");
+//     }
+//   };
   
-  // Busca el producto en el array y lo carga al carrito
+//   // Busca el producto en el array y lo carga al carrito
   
-  const guardar = (productos, pregunta) => {
-    const producto = productos.find((e) => e.name == pregunta);
-    const arr = [producto];
-    arr.forEach((e) => {
-      if (producto != undefined && pregunta == e.name) {
-        carrito.push(producto);
-        preguntar(
-          confirm("Su producto se cargo con exito, desea agregar algo mas?")
-        );
-      } else if (pregunta === null) {
-        alert("Operacion cancelada");
-      } else {
-        alert("Lo sentimos pero el producto que acaba de nombrar no existe");
-      }
-    });
-  };
+//   const guardar = (productos, pregunta) => {
+//     const producto = productos.find((e) => e.name == pregunta);
+//     const arr = [producto];
+//     arr.forEach((e) => {
+//       if (producto != undefined && pregunta == e.name) {
+//         carrito.push(producto);
+//         preguntar(
+//           confirm("Su producto se cargo con exito, desea agregar algo mas?")
+//         );
+//       } else if (pregunta === null) {
+//         alert("Operacion cancelada");
+//       } else {
+//         alert("Lo sentimos pero el producto que acaba de nombrar no existe");
+//       }
+//     });
+//   };
   
-  comprar();
+//   comprar();
